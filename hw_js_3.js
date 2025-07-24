@@ -196,3 +196,87 @@ console.log('------------------------');
 }
 
 console.log('------------------------');
+
+/*13. Найти число с максимальной суммой цифр среди чисел: 56,987,103,9011,45.
+*/
+
+{
+
+  let string = '56,987,103,9011,45';
+  let glue = '';
+  let sum;
+  let maxSum;
+
+  for (let i = 0; string[i] != undefined; i++) {
+
+    if (string[i] != ',' && string[i] != undefined) {
+
+      glue += string[i];
+
+    } else { 
+
+      sum = 0;
+    
+      for (let j = 0; glue[j] != undefined; j++) {
+
+        sum += +glue[j];
+      
+      }
+
+      if (maxSum == undefined) {
+        maxSum = sum;
+      }
+             
+      if (maxSum < sum) maxSum = sum;
+
+      glue = '';
+
+    }
+
+  }
+
+  console.log(`Максимальная сумма цифр = ${maxSum}`);
+
+}
+
+console.log('------------------------');
+
+
+/*14. Вывести на экран «прямоугольник», образованный из двух видов символов. 
+Контур прямоугольника должен состоять из одного символа, а в «заливка» — из 
+другого.*/
+
+{
+
+  let hashtag = '#';
+  let zero = '0';
+  let line = '';
+
+  for (let i = 0; i <= 5; i++) {
+
+        
+    for (let j = 0; j <= 29; j++) {
+
+      line += hashtag;
+
+      if (i >= 1 && i <= 4) {
+
+        line = hashtag;
+
+        for (let k = 1; k <= 28; k++) {
+          line += zero;
+        }
+
+        line += hashtag;
+
+      }
+            
+    }
+
+    document.write(line + '<br>');
+        
+    line = '';
+
+  }
+}
+
