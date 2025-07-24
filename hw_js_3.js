@@ -96,3 +96,103 @@ console.log('------------------------');
 // }
 
 console.log('------------------------');
+
+
+
+// Документ Tasks_Loop.pdf
+
+/*1. Выведите с помощью цикла на экран числа от 1 до 50. Решите задачу с 
+помощью while и for */
+
+// {
+//   for (let i = 1; i <= 50; console.log(i), i++);
+// }
+
+// {
+//   let i = 1;
+
+//   while (i <= 50) {
+//     console.log(i);
+//     i++;
+//   }
+
+// }
+
+console.log('------------------------');
+
+/*4. Найдите сумму чисел от 1 до 50, а также сумму этих же чисел, исключая 
+четные.  */
+
+let sum = 0;
+let evenSum = 0;
+
+for (let i = 1; i <= 50; i++) {
+
+  sum += i;
+
+  if (i % 2 != 0) evenSum += i;
+
+}
+
+console.log('Сумма чисел от 1 до 50 = ' + sum);
+console.log('Сумма чисел от 1 до 50, исключая четные = ' + evenSum);
+
+
+console.log('------------------------');
+
+
+/*7. Найти самую большую цифру в целом числе. */
+
+{
+
+  let number = '27803';
+  let i = 0;
+  let currentNum = 0;
+  let max;
+
+  while (number[i] != undefined) {
+
+    currentNum = +number[i];
+    
+    if (max == undefined) {
+      max = currentNum;
+    }
+
+    if (max < currentNum) max = currentNum;
+
+    currentNum = 0;
+    i++;
+
+  }
+
+  console.log(`Самая большая цифра в заданном числе = ${max}`);
+
+
+}
+
+console.log('------------------------');
+
+/*10. Нарисуйте в консоле браузера прямоугольный треугольник заполненный
+символом #. */
+
+{
+
+    let hashtag = '#';
+
+    for (let i = 0, line = ''; i <= 5; i++) {
+
+      for (let j = 0; j <= 5;) {
+
+          line += hashtag;
+          j ++;
+          break;
+
+      }
+
+      console.log(line);
+
+    }
+
+}
+
+console.log('------------------------');
