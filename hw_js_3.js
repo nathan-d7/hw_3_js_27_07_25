@@ -197,6 +197,70 @@ console.log('------------------------');
 
 console.log('------------------------');
 
+/*11. Напишите программу, которая проверяет правильность ввода пароля от
+пользователя. Важно, чтобы пароль соотв. сл. требованиям: длина пароля от 6
+символов; пароль должен состоять только из лат. символов; содержать
+минимум 1 число, 1 большой символ и любой знак из списка: _*&-#$.
+*/
+
+let userPass = prompt('Пожалуйста, ввдите ваш пароль', 'feD3_$');
+
+let count = 0;
+let passLength;
+let passDigit = 0;
+let passSymbols = '_*&-#$';
+let passSymbol = false;
+let passUpperCase = false;
+let passLatin = false;
+let isInvalid = false;
+
+
+while (userPass[count] != undefined) {
+
+    let char = userPass[count];
+
+    if (char >= '0' && char <= '9') {
+      passDigit++;
+    }
+
+   if (char >= 'A' && char <= 'Z') {
+      passUpperCase = true;
+   } 
+
+   if (char >= 'a' && char <= 'z') {
+      passLatin = true;
+   } 
+
+   let j = 0;
+
+   for (; passSymbols[j] != undefined; j++) {
+      if (passSymbols[j] == char) {
+        passSymbol = true;
+        break;
+      }
+   }
+
+   if (
+    !((char >= '0' && char <= '9') ||
+    (char >= 'A' && char <= 'Z') || 
+    (char >= 'a' && char <= 'z') || 
+    passSymbols[j] == char)) {
+
+      isInvalid = true;
+      break;
+    }
+
+    count++;
+    passLength = count;
+
+}
+
+if (passLength >= 6 && passDigit >= 1 && passUpperCase && passLatin && passSymbol && !isInvalid) {
+      console.log('Добро пожаловать');
+} else console.log('Неверный пароль');
+
+console.log('------------------------');
+
 /*13. Найти число с максимальной суммой цифр среди чисел: 56,987,103,9011,45.
 */
 
